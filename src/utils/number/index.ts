@@ -1,0 +1,1 @@
+export { createRandomIntFromInterval } from './createRandomIntFromInterval';

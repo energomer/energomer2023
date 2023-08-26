@@ -1,0 +1,31 @@
+@import './fonts/stylesheet.scss';
+@import './variables.scss';
+@import './mixins.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include body-text;
+  color: $color-black;
+}
+
+body {
+  background: radial-gradient(103.78% 204.63% at -8.36% 116.34%, #FBFAF9 0%, #FFFEFD 4.17%, #E1EEF2 13.02%, #EFF0F0 31.87%, #E7E8E8 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: 0.3s all;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
