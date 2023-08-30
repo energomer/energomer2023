@@ -67,6 +67,7 @@ const tabs = [
   margin-top: 41px;
   margin-left: 57px;
   margin-right: 200px;
+  position: static;
   @include subtitle;
 }
 

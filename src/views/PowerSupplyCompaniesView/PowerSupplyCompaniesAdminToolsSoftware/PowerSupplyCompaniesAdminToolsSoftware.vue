@@ -89,6 +89,7 @@ const information = [
 
 .image {
   margin-top: 70px;
+  position: static;
 }
 
 </style>

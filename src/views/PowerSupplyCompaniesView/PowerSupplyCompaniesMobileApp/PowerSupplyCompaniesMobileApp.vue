@@ -87,6 +87,7 @@ const information = [
 .image {
   margin-top: 70px;
   margin-left: 70px;
+  position: static;
 }
 
 .image-qr {
