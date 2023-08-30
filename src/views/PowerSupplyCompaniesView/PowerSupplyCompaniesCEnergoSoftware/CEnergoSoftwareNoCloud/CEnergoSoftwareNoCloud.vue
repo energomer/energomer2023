@@ -65,7 +65,9 @@ const information = [
 
 <template>
   <div class="CEnergo-software-no-cloud">
-    <div class="left-block">
+    <div 
+      class="left-block"
+    >
       <p class="description">
         ПО предназначено для измерения и многотарифного коммерческого учёта электрической энергии и мощности, автоматизированного сбора, хранения, обработки и отображения данных по энергопотреблению
       </p>

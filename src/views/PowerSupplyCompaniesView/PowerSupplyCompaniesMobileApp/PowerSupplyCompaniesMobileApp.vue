@@ -45,8 +45,14 @@ const information = [
 </script>
 
 <template>
-  <div class="power-supply-companies-mobile-app">
-    <div class="left-block">
+  <div 
+    class="power-supply-companies-mobile-app"
+    data-aos="fade-in"
+    :data-aos-duration="500"
+  >
+    <div 
+      class="left-block"
+    >
       <h2 class="title">Энергомера учёт</h2>
       <p class="description">Эффективное дополнение компактного индикаторного устройства CE901 для удобного сбора данных о потреблении электроэнергии</p>
       <img class="image" src="../../../assets/images/solution-for-power-supply-companies/mobile-app.png" alt="">
@@ -63,6 +69,10 @@ const information = [
   display: flex;
   justify-content: space-between
 }
+.left-block {
+  position: relative;
+}
+
 .title {
   @include title-h1;
 }

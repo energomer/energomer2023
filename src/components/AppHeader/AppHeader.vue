@@ -27,11 +27,14 @@ watch(() => route.fullPath, () => {
     <AppSubNavigation class="app-navigation" :items="appNavigation?.[activeNavigation]?.children ?? []" />
     <AppMenuButton  class="header-button" @click.stop="toggleMenu" />
   </div>
-  <Transition>
-    <div v-if="isMenuOpen" class="navigation-menu-wrapper">
+    <div 
+      v-if="isMenuOpen" 
+      class="navigation-menu-wrapper"     
+      data-aos="fade-down-left"
+      :data-aos-duration="500"
+    >
       <AppNavigationMenu />
     </div>
-  </Transition>
 </header>
 </template>
 

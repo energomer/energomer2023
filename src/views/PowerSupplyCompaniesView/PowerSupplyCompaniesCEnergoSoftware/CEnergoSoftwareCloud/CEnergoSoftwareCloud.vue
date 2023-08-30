@@ -35,7 +35,9 @@ const information = [
 
 <template>
   <div class="CEnergo-software-cloud">
-    <div class="left-block">
+    <div 
+      class="left-block"
+    >
       <p class="description">
         ПО предназначено для измерения и многотарифного коммерческого учёта электрической энергии и мощности, автоматизированного сбора, хранения, обработки и отображения данных по энергопотреблению
       </p>
@@ -62,7 +64,7 @@ const information = [
 
 .description {
   @include subtitle;
-  position: absolute;
+  margin-bottom: 30px;
   top: 110px;
   max-width: 653px;
   color: $color-dark-grey;

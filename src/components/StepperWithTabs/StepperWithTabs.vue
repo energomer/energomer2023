@@ -5,9 +5,10 @@ import { IcDotPattern } from '@/components/UI/Icons';
 import { createRandomIntFromInterval } from '@/utils/number';
 
 import {ellipsePositions} from './StepperWithTabs.constants';
-import type { StepperWithTabsProps } from './StepperWithTabs.types';
+import type { StepperWithTabsEmits, StepperWithTabsProps } from './StepperWithTabs.types';
 
 const props = defineProps<StepperWithTabsProps>()
+const emits = defineEmits<StepperWithTabsEmits>()
 
 const ellipseStyle = ref(ellipsePositions[0]);
 
@@ -16,6 +17,7 @@ const activeItem = computed(() => props.items?.find((item) => activeTab.value ==
 
 const handleNabClick = (tab: string) => {
   activeTab.value = tab
+  emits('onTabClick', tab)
 
   ellipseStyle.value = ellipsePositions[createRandomIntFromInterval(0, 5)]
 }
@@ -58,6 +60,12 @@ onMounted(() => {
       src="../../assets/images/background-ellipse.png" 
       alt=""
     >
+    <img
+      v-if="withPhoneImage"
+      class="background-image-phone"
+      src="../../assets/images/phone.png" alt=""
+    >
+    <slot />
   </div>
 </template>
 
@@ -123,4 +131,9 @@ onMounted(() => {
   transition: 1s all;
 }
 
+.background-image-phone {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
 </style>

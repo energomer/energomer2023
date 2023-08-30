@@ -24,5 +24,6 @@ onMounted(() => {
 body {
   @include app-container;
   padding: 30px 80px 76px 80px;
+  overflow: hidden;
 }
 </style>

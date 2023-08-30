@@ -23,8 +23,6 @@ const items = computed(() => {
 
   return navItem;
 })
-
-console.log(items)
 </script>
 
 <template>
@@ -70,7 +68,7 @@ console.log(items)
   }
 
   .background-image {
-    margin-top: 52px;
+    margin-top: 100px;
   }
 
   .navigation-blocks {

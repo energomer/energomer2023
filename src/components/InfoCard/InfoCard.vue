@@ -82,6 +82,8 @@ defineProps<InfoCardProps>()
 
 .paragraph {
   margin-top: 20px;
+  color: $color-black;
+  @include body-text;
 }
 
 .list {

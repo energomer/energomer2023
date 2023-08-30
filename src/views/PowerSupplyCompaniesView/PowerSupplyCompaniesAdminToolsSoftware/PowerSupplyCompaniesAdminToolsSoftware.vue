@@ -46,8 +46,14 @@ const information = [
 </script>
 
 <template>
-  <div class="power-supply-companies-admin-tools-software">
-    <div class="left-block">
+  <div 
+    class="power-supply-companies-admin-tools-software"
+    data-aos="fade-in"
+    :data-aos-duration="500"
+  >
+    <div 
+      class="left-block"
+    >
       <h2 class="title">Admin Tools</h2>
       <p class="subtitle">Конфигурирование, наладка и контроль работы приборов учёта «Энергомера»</p>
       <p class="description">ПО Admin Tools позволяет производить любые доступные действия по любому доступному интерфейсу связи с каждым поддерживаемым прибором и устройством</p>

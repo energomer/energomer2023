@@ -8,4 +8,9 @@ export interface StepperWithTabsProps {
     component: Component
     props?: InfoCardProps;
   }[]
+  withPhoneImage?: boolean
+}
+
+export interface StepperWithTabsEmits {
+  (event: 'onTabClick', data: string): void;
 }

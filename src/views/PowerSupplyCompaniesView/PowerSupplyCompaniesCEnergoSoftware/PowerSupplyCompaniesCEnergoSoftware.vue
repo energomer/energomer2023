@@ -10,7 +10,11 @@ const isCloud = ref(false);
 </script>
 
 <template>
-  <div class="power-supply-companies-CEnergo-software">
+  <div 
+    class="power-supply-companies-CEnergo-software"
+    data-aos="fade-in"
+    :data-aos-duration="500"
+  >
     <div class="left-block-header">
         <h2 class="left-block-title">cEnergo</h2>
         <UIToggle 
@@ -20,8 +24,12 @@ const isCloud = ref(false);
         />
     </div>
     <div class="info-blocks">
-      <CEnergoSoftwareCloud v-if="isCloud"/>
-      <CEnergoSoftwareNoCloud v-if="!isCloud"/>
+      <CEnergoSoftwareCloud 
+        v-if="isCloud"
+      />
+      <CEnergoSoftwareNoCloud 
+        v-if="!isCloud"
+      />
     </div>
   </div>
 </template>

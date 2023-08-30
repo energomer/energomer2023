@@ -17,5 +17,5 @@ export const appRoutes = {
   phaseFailureSystem: () => '/phase-failure-system',
   software: () => '/software',
   intelligentAccountingSystems: () => '/intelligent-accounting-systems',
-  about: () => '/about',
+  about: () => '/',
 }

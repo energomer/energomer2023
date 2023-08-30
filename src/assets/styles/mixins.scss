@@ -67,3 +67,13 @@
   border: none;
   background: transparent;
 }
+
+@mixin fill-svg-and-path($color, $transition-duration: 200ms) {
+	transition: all $transition-duration;
+	fill: $color;
+
+	path {
+			transition: all $transition-duration;
+			fill: inherit;
+	}
+}
