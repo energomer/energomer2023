@@ -4,10 +4,11 @@ import { useRoute } from 'vue-router';
 import { IcMore } from '@/components/UI/Icons';
 
 const route = useRoute();
+console.log(route.name)
 </script>
 
 <template>
-  <button class="menu-button" type="button" :disabled="route.name === 'home'">
+  <button class="menu-button" type="button" :disabled="route.name === 'menu'">
     <span>Меню</span>
     <IcMore class="icon"/>
   </button>

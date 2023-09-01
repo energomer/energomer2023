@@ -46,6 +46,10 @@ export const appNavigation = [
         link: appRoutes.powerGridComplexConstructionDigitalRES(),
       },
       {
+        text: 'Система обрыва фаз',
+        link: appRoutes.powerGridComplexPhaseFailureSystem()
+      },
+      {
         text: 'SCADA 2.0',
         link: appRoutes.powerGridComplexSCADA(),
       },
@@ -78,10 +82,6 @@ export const appNavigation = [
             link: appRoutes.softwarePowerGridComplexSCADA()
           },
         ]
-      },
-      {
-        text: 'Система обрыва фаз',
-        link: appRoutes.phaseFailureSystem()
       },
       {
         text: 'Интеллектуальные системы учёта',

@@ -380,6 +380,7 @@ const slideThirdList = [
     border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0) 82.96%, rgba(255, 255, 255, 0.2) 100%);
     box-shadow: 0px 4px 24px 8px #FFFFFF1A inset, 16px 24px 16px -16px #FFFFFF1A inset, 0px 10px 15px -15px #0052A01A;
     padding: 20px 20px 20px 30px;
+    backdrop-filter: blur(8px);
     width: 823px;
     border-radius: 20px;
     position: relative;
@@ -497,6 +498,7 @@ const slideThirdList = [
     width: 473px;
     border-radius: 20px;
     margin-top: 4px;
+    backdrop-filter: blur(8px);
   }
 
   &-benefit {
@@ -513,6 +515,7 @@ const slideThirdList = [
     position: absolute;
     right: 225px;
     bottom: 50px;
+    backdrop-filter: blur(8px);
   }
 }
 
@@ -588,6 +591,7 @@ const slideThirdList = [
     border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0) 82.96%, rgba(255, 255, 255, 0.2) 100%);
     box-shadow: 0px 4px 24px 8px #FFFFFF1A inset, box-shadow, 16px 24px 16px -16px #FFFFFF1A inset, 0px 10px 15px -15px #0052A01A;
     border-radius: 20px;
+    backdrop-filter: blur(8px);
   }
 
   &-panel-item {
@@ -615,6 +619,7 @@ const slideThirdList = [
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  backdrop-filter: blur(8px);
 
   &-next {
     right: 30px;

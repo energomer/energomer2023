@@ -32,7 +32,8 @@ const items = computed(() => {
   }
 
   if (route.matched[0]?.path === '/intelligent-accounting-systems') {
-    return appNavigation?.[3]?.children[2]?.children
+    console.log(appNavigation?.[3], 123213123)
+    return appNavigation?.[3]?.children[1]?.children
   }
 
   return []

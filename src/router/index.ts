@@ -4,6 +4,7 @@ import { AboutView } from '@/views/AboutView'
 import { HomeView } from '@/views/HomeView'
 import { G3PLC, GSMGPRS3GNBIoT, IntelligentAccountingSystemsView, LoRS485, PLCRF } from '@/views/IntelligentAccountingSystems'
 import { LoRaWAN } from '@/views/IntelligentAccountingSystems/LoRaWAN'
+import { MenuView } from '@/views/MenuView'
 import { DigitalizationOfThePowerGridComplex, NetworkCompaniesCybersecurity, NetworkCompaniesMobileApp, NetworkCompaniesView } from '@/views/NetworkCompaniesView'
 import { PowerGridComplexSCADA } from '@/views/NetworkCompaniesView/DigitalizationOfThePowerGridComplex'
 import { PowerSupplyCompaniesAdminToolsSoftware, PowerSupplyCompaniesCEnergoSoftware, PowerSupplyCompaniesMobileApp, PowerSupplyCompaniesProductLine, PowerSupplyCompaniesView } from '@/views/PowerSupplyCompaniesView'
@@ -18,6 +19,11 @@ const router = createRouter({
       path: appRoutes.home(),
       component: HomeView,
       name: 'home',
+    },
+    {
+      path: appRoutes.menu(),
+      component: MenuView,
+      name: 'menu',
     },
     {
       path: appRoutes.about(),
@@ -96,6 +102,14 @@ const router = createRouter({
       component: DigitalizationOfThePowerGridComplex,
       children: [
         {
+          path: appRoutes.powerGridComplexConstructionDigitalRES().split('/')[2],
+          component: PowerGridComplexSCADA,
+        },
+        {
+          path: appRoutes.powerGridComplexPhaseFailureSystem().split('/')[2],
+          component: PowerGridComplexSCADA,
+        },
+        {
           path: appRoutes.powerGridComplexSCADA().split('/')[2],
           component: PowerGridComplexSCADA,
         },
@@ -126,7 +140,7 @@ const router = createRouter({
           component: PLCRF,
         }
       ]
-    }
+    },
   ]
 })
 

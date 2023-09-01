@@ -14,7 +14,9 @@ export const appRoutes = {
   powerGridComplexConstructionDigitalRES: () => '/digitalization-of-power-grid-complex/construction-of-digital-RES',  
   powerGridComplexProductLine: () => '/digitalization-of-power-grid-complex/product-line',
   powerGridComplexSCADA: () => '/digitalization-of-power-grid-complex/SCADA-2.0',
+  powerGridComplexPhaseFailureSystem: () => '/digitalization-of-power-grid-complex/phase-failure-system',
   phaseFailureSystem: () => '/phase-failure-system',
+  softwarePhaseFailureSystem: () => '/software/phase-failure-system',
   software: () => '/software',
   softwareSupplyCompaniesCEnergoSoftware: () => '/software/supply-companies-CEnergo-software',
   softwareAdminToolsSoftware: () => '/software/admin-tools-software',
@@ -28,4 +30,5 @@ export const appRoutes = {
   intelligentAccountingSystemsGSMGPRS3GNBIoT: () => '/intelligent-accounting-systems/GSM-GPRS-3G-NB-IoT',
   intelligentAccountingSystemsPLCRF: () => '/intelligent-accounting-systems/PLC-RF',
   about: () => '/about',
+  menu: () => '/menu',
 }

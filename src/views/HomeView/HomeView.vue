@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 import  { IcLogoWhite } from '@/components/UI/Icons';
 import { appRoutes } from '@/router/appRoutes';
-import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
@@ -11,9 +12,9 @@ const router = useRouter();
   <div class="main-view">
     <IcLogoWhite />
     <img class="main-view-gif" src="./giphy_coub.gif" alt="">
-    <button class="main-button" type="button" @click.stop="router.push(appRoutes.about())">
+    <button class="main-button" type="button" @click.stop="router.push(appRoutes.menu())">
       Начать просмотр
-    </button>
+    </button> 
   </div>
 </template>
 
