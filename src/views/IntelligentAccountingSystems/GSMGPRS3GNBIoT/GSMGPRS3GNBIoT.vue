@@ -1,6 +1,66 @@
 <script setup lang="ts">
+import { Carousel } from '@/components/Carousel';
 import { InfoCard } from '@/components/InfoCard';
 import { StepperWithTabs } from '@/components/StepperWithTabs';
+
+import img5 from './image 95.png'
+import img6 from './image 95-1.png'
+import img7 from './image 95-2.png'
+import img8 from './image 95-3.png'
+import img from './image 95-4.png'
+import img1 from './image 95-5.png'
+import img2 from './image 95-6.png'
+import img3 from './image 95-7.png'
+import img4 from './image 95-8.png'
+
+
+const slides = [
+  {
+    img,
+    title: 'CE208-S7СПОДЭС / DLMS',
+    text: 'Однофазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img1,
+    title: 'СE208-C4 СПОДЭС / DLMS',
+    text: 'Счетчик электроэнергии однофазный многотарифный'
+  },
+  {
+    img: img2,
+    title: 'CE308-S34 СПОДЭС / DLMS',
+    text: 'Трехфазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img3,
+    title: 'CE308-S31 СПОДЭС / DLMS',
+    text: 'Счетчик электроэнергии трехфазный многофункциональный'
+  },
+  {
+    img: img4,
+    title: 'CE308-C36 СПОДЭС / DLMS',
+    text: 'Трехфазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img5,
+    title: 'CE207-R7',
+    text: 'Счетчик электроэнергии однофазный многотарифный'
+  },
+  {
+    img: img6,
+    title: 'CE207-S7',
+    text: 'Счетчик электроэнергии однофазный многотарифный'
+  },
+  {
+    img: img7,
+    title: 'СE307-R34',
+    text: 'Счетчик электроэнергии трехфазный многотарифный'
+  },
+  {
+    img: img8,
+    title: 'СE307-S35',
+    text: 'Счетчик электроэнергии трехфазный многотарифный'
+  },
+]
 
 const information = [
   {
@@ -33,6 +93,7 @@ const information = [
       <p class="description">Для сбора данных с отдельно расположенных точек учета могут быть использованы сети мобильной связи. В продуктовой линейке Компании Энергомера доступны как счетчики с широко используемыми технологиями GSM/GPRS/3G, так и с перспективным каналом связи интернета вещей NB-IoT.</p>
       <p class="description">NB-IoT (Narrow Band Internet of Things) – стандарт сотовой связи для устройств телеметрии с низкими объёмами обмена данными.Разработан консорциумом 3GPP в рамках работ над стандартами сотовых сетей нового поколения. Канал связи призван заменить устаревающие технологии ранних поколений мобильной связи, такие как GPRS и EDGE.</p>
       <p class="description">Применение приведенных каналов связи в АСКУЭ рекомендуется для счетчиков, установленных в небольшом количестве, либо в значительно удаленных от УСПД точках учета.</p>
+      <Carousel class="carousel-products" :slides="slides"/>
     </div>
     <div class="right-block">
       <StepperWithTabs 
@@ -62,10 +123,10 @@ const information = [
 
 .description {
   @include subtitle;
-  margin-top: 30px;
   color: $color-black;
   max-width: 850px;
-  font-size: 16px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .image {
@@ -74,6 +135,10 @@ const information = [
   left: 30px;
   left: initial;
   margin: 0;
+  border-radius: 20px;
 }
 
+.carousel-products {
+  margin-top: 40px;
+}
 </style>

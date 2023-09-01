@@ -1,7 +1,7 @@
 <!-- eslint-disable no-param-reassign -->
 <script setup lang="ts">
 // @ts-nocheck
-import { computed, ref, watch, watchEffect } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 import { appNavigation } from '@/constants/app-navigation';

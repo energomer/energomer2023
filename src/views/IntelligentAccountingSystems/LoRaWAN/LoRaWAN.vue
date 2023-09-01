@@ -1,6 +1,15 @@
 <script setup lang="ts">
+import { Carousel } from '@/components/Carousel';
 import { InfoCard } from '@/components/InfoCard';
 import { StepperWithTabs } from '@/components/StepperWithTabs';
+
+import img from './image 95.png'
+import img1 from './image 95-1.png'
+import img2 from './image 95-2.png'
+import img3 from './image 95-3.png'
+import img4 from './image 95-4.png'
+import img5 from './image 95-5.png'
+import img6 from './image 95-6.png'
 
 const information = [
   {
@@ -33,6 +42,44 @@ const information = [
     }
   },
 ]
+
+const slides = [
+  {
+    img,
+    title: 'CE207-R7',
+    text: 'Счетчик электроэнергии однофазный многотарифный'
+  },
+  {
+    img: img1,
+    title: 'СE307-R34',
+    text: 'Счетчик электроэнергии трехфазный многотарифныйй'
+  },
+  {
+    img: img2,
+    title: 'CE208-S7 СПОДЭС / DLMS',
+    text: 'Однофазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img3,
+    title: 'СE208-C4 СПОДЭС / DLMS',
+    text: 'Счетчик электроэнергии однофазный многотарифный'
+  },
+  {
+    img: img4,
+    title: 'CE308-S34 СПОДЭС / DLMS',
+    text: 'Трехфазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img5,
+    title: 'CE308-S31 СПОДЭС / DLMS',
+    text: 'Счетчик электроэнергии трехфазный многофункциональный'
+  },
+  {
+    img: img6,
+    title: 'CE308-C36 СПОДЭС / DLMS',
+    text: 'Трехфазный многотарифный счетчик активной и реактивной энергии'
+  },
+]
 </script>
 
 <template>
@@ -49,6 +96,7 @@ const information = [
       <p class="description">Ключевой особенностью канала связи является значительная дальность связи – до 15 километров в при отсутствии преград между приемником и передатчиком. Другим преимуществом технологии является низкое энергопотребление, обуславливающее перспективы ее использования в устройствах на батарейном питании.</p>
       <p class="description">Компанией Энергомера разработаны счетчики электроэнергии со встроенными модулями связи LoRaWAN. Реализация АСКУЭ осуществляется в партнерстве с оператором связи, предоставляющим возможность использования имеющейся «облачной» инфраструктуры (собранные данные хранятся на серверах оператора) или развертывания собственной закрытой сети (собранные данные хранятся в энергоснабжающей организации). Обеспечивается возможность интеграции в различные программные комплексы для анализа данных и предоставления потребителям личных кабинетов с отображением информации об энергопотреблении.</p>
       <p class="description">Применение канала связи рекомендуется на небольших объектах АСКУЭ, где производится сбор основных данных об энергопотреблении и основных журналов событий.</p>
+      <Carousel class="carousel-products" :slides="slides"/>
     </div>
     <div class="right-block">
       <StepperWithTabs 
@@ -78,10 +126,10 @@ const information = [
 
 .description {
   @include subtitle;
-  margin-top: 30px;
   color: $color-black;
   max-width: 850px;
-  font-size: 16px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .image {
@@ -90,6 +138,11 @@ const information = [
   left: 30px;
   left: initial;
   margin: 0;
+  border-radius: 20px;
+}
+
+.carousel-products {
+  margin-top: 10px;
 }
 
 </style>

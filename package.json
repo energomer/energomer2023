@@ -13,8 +13,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@types/swiper": "^6.0.0",
     "aos": "^3.0.0-beta.6",
     "pinia": "^2.1.6",
+    "swiper": "^10.2.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },

@@ -2,6 +2,49 @@
 import { InfoCard } from '@/components/InfoCard';
 import { StepperWithTabs } from '@/components/StepperWithTabs';
 
+import img from './image 95.png'
+import img1 from './image 95-1.png'
+import img2 from './image 95-2.png'
+import img3 from './image 95-3.png'
+import img4 from './image 95-4.png'
+import img5 from './image 95-5.png'
+import { Carousel } from '@/components/Carousel';
+
+
+
+const slides = [
+  {
+    img,
+    title: 'СE208-C4 СПОДЭС / DLMS',
+    text: 'Счетчик электроэнергии однофазный многотарифный'
+  },
+  {
+    img: img1,
+    title: 'CE208-S7 СПОДЭС / DLMS',
+    text: 'Однофазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img2,
+    title: 'CE308-C36 СПОДЭС / DLMS',
+    text: 'Трехфазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img3,
+    title: 'CE308-S31 СПОДЭС / DLMS',
+    text: 'Счетчик электроэнергии трехфазный многофункциональный'
+  },
+  {
+    img: img4,
+    title: 'CE308-S34 СПОДЭС / DLMS',
+    text: 'Трехфазный многотарифный счетчик активной и реактивной энергии'
+  },
+  {
+    img: img5,
+    title: 'СЕ805М',
+    text: 'Устройство сбора и передачи данных'
+  },
+]
+
 const information = [
   {
     tab: 'Характеристики',
@@ -49,6 +92,7 @@ const information = [
       <p class="description">АСКУЭ, построенная на гибридном канале связи имеет ряд достоинств в местах частного сектора и плотной застройки, где счетчики, располагаясь на достаточно близком расстоянии друг от друга, выступают ретрансляторами, передавая информацию посредством таких технологий связи как PLC и RF.</p>
       <p class="description">Первая из них основана на отправке информации по линиям электропередач, вторая – радиочастоты. Оба способа передачи данных имеют как преимущества, так и недостатки. Большое количество зданий, неровности окружающей местности, зашумленность нелицензируемых частотных диапазонов, промышленные источники помех отрицательно влияют на надежность передачи данных.</p>
       <p class="description">Для снижения рисков, АО «Электротехнические заводы «Энергомера» разработало и внедряет систему, построенную на гибридном канале связи PLC + RF.</p>
+      <Carousel class="carousel-products" :slides="slides"/>
     </div>
     <div class="right-block">
       <StepperWithTabs 
@@ -78,10 +122,11 @@ const information = [
 
 .description {
   @include subtitle;
-  margin-top: 30px;
+
   color: $color-black;
   max-width: 850px;
-  font-size: 16px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .image {
@@ -89,6 +134,11 @@ const information = [
   bottom: 20px;
   left: 30px;
   margin: 0;
+  border-radius: 20px;
+}
+
+.carousel-products {
+  margin-top: 40px;
 }
 
 </style>
