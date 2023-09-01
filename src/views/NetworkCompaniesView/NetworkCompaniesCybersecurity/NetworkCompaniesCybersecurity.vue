@@ -104,6 +104,7 @@ const activeTab = ref(0);
 }
 
 .title {
+  margin-top: 40px;
   @include title-h1;
 }
 
@@ -129,6 +130,8 @@ const activeTab = ref(0);
 }
 
 .left-block-info {
+  position: absolute;
+  top: 190px;
   margin-top: 522px;
   padding: 10px;
   border-radius: 40px;

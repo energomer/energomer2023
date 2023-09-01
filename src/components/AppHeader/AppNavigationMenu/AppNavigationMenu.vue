@@ -4,6 +4,8 @@ import { computed } from 'vue';
 import { IcArrowNext } from '@/components/UI/Icons';
 import { appNavigation } from '@/constants/app-navigation';
 
+defineEmits(['onLinkClick'])
+
 const items = computed(() => {
   const navItem: { text: string, link: string, isParent: boolean }[][] = []
 
@@ -16,7 +18,11 @@ const items = computed(() => {
 
     item.children.forEach((subItem) => {
       if (subItem.text && subItem.link) {
-        navItem[index].push({ text: subItem.text, link: subItem.link, isParent: false })
+        if (subItem?.children) {
+          navItem[index].push({ text: subItem.text, link: subItem.children?.[0].link, isParent: false })
+        } else {
+          navItem[index].push({ text: subItem.text, link: subItem.link, isParent: false })
+        }
       }
     })
   })
@@ -29,7 +35,7 @@ const items = computed(() => {
   <div class="navigation-menu">
     <div class="navigation-blocks">
       <ul v-for="(blocks, index) in items" :key="index" class="list">
-        <li v-for="item in blocks" :key="item.link" class="list-item">
+        <li v-for="item in blocks" :key="item.link" class="list-item" @click.stop="$emit('onLinkClick')">
           <RouterLink 
             :class="item.isParent ? 'parent-link' : 'children-link'" 
             :to="item.link"
@@ -68,7 +74,7 @@ const items = computed(() => {
   }
 
   .background-image {
-    margin-top: 100px;
+    margin-top: 150px;
   }
 
   .navigation-blocks {

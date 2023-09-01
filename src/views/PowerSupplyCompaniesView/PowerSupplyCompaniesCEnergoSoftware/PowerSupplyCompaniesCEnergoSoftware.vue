@@ -18,6 +18,7 @@ const isCloud = ref(false);
     <div class="left-block-header">
         <h2 class="left-block-title">cEnergo</h2>
         <UIToggle 
+          class="toggle"
           label="Cloud" 
           :checked="isCloud" 
           @change.stop="isCloud = $event.target.checked" 
@@ -39,11 +40,17 @@ const isCloud = ref(false);
   position: relative;
 }
 
+
+.toggle {
+  position: relative;
+  z-index: 10;
+}
 .left-block-header {
   position: absolute;
   display: flex;
   justify-content: space-between;
   gap: 30px;
+  margin-top: 40px;
 }
 
 .left-block-title {

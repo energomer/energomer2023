@@ -11,7 +11,7 @@ import { AppSubNavigation } from './AppSubNavigation';
 
 const route = useRoute();
 
-const activeNavigation = ref(0);
+const activeNavigation = ref<undefined | number>(-1);
 const [isMenuOpen,, closeMenu, toggleMenu] = useBooleanState(false);
 
 watch(() => route.fullPath, () => {
@@ -19,12 +19,16 @@ watch(() => route.fullPath, () => {
   activeNavigation.value = index
   closeMenu();
 })
+
 </script>
 
 <template>
 <header class="header">
   <div class="container" @click.stop="">
-    <AppSubNavigation class="app-navigation" :items="appNavigation?.[activeNavigation]?.children ?? []" />
+    <AppSubNavigation 
+      class="app-navigation" 
+      :items="appNavigation?.[activeNavigation]?.children ?? (route.matched[0]?.path === '/software' ? appNavigation?.[3]?.children[0]?.children :  [])" 
+    />
     <AppMenuButton  class="header-button" @click.stop="toggleMenu" />
   </div>
     <div 
@@ -33,7 +37,7 @@ watch(() => route.fullPath, () => {
       data-aos="fade-down-left"
       :data-aos-duration="500"
     >
-      <AppNavigationMenu />
+      <AppNavigationMenu @on-link-click="closeMenu()"/>
     </div>
 </header>
 </template>

@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 
 import { IcLogo } from '@/components/UI/Icons';
+import { appRoutes } from '@/router/appRoutes';
 
 import type { AppSubNavigationProps } from './AppSubNavigation.types';
 
+const router = useRouter()
+
 const props = defineProps<AppSubNavigationProps>();
-console.log(props);
 </script>
 
 <template>
   <div class="sub-navigation">
-    <div class="logo">
+    <div class="logo" @dblclick.stop="router.push(appRoutes.home())">
       <IcLogo />
     </div>
     <ul class="list">

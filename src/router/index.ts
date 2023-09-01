@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import { AboutView } from '@/views/AboutView'
 import { HomeView } from '@/views/HomeView'
 import { DigitalizationOfThePowerGridComplex, NetworkCompaniesCybersecurity, NetworkCompaniesMobileApp, NetworkCompaniesView } from '@/views/NetworkCompaniesView'
 import { PowerGridComplexSCADA } from '@/views/NetworkCompaniesView/DigitalizationOfThePowerGridComplex'
 import { PowerSupplyCompaniesAdminToolsSoftware, PowerSupplyCompaniesCEnergoSoftware, PowerSupplyCompaniesMobileApp, PowerSupplyCompaniesProductLine, PowerSupplyCompaniesView } from '@/views/PowerSupplyCompaniesView'
+import { SoftwareView } from '@/views/SoftwareView'
 
 import { appRoutes } from './appRoutes'
 
@@ -12,7 +14,40 @@ const router = createRouter({
   routes: [
     {
       path: appRoutes.home(),
-      component: HomeView
+      component: HomeView,
+      name: 'home',
+    },
+    {
+      path: appRoutes.about(),
+      component: AboutView,
+    },
+    {
+      path: appRoutes.software(),
+      component: SoftwareView,
+      name: 'Программое обеспечение',
+      children: [
+        {
+          path: appRoutes.softwareSupplyCompaniesCEnergoSoftware().split('/')[2],
+          component: PowerSupplyCompaniesCEnergoSoftware
+        },
+        {
+          path: appRoutes.softwareAdminToolsSoftware().split('/')[2],
+          component: PowerSupplyCompaniesAdminToolsSoftware
+        },
+        {
+          path: appRoutes.softwareSupplyCompaniesMobileApp().split('/')[2],
+          component: PowerSupplyCompaniesMobileApp
+        },  
+        {
+          path: appRoutes.softwareNetworkCompaniesMobileApp().split('/')[2],
+          component: NetworkCompaniesMobileApp,
+      
+        },
+        {
+          path: appRoutes.powerGridComplexSCADA().split('/')[2],
+          component: PowerGridComplexSCADA,
+        },
+      ]
     },
     {
       path: appRoutes.solutionForPowerSupplyCompanies(),
@@ -45,6 +80,10 @@ const router = createRouter({
           component: NetworkCompaniesCybersecurity,
         },
         {
+          path: appRoutes.networkCompaniesCEnergoSoftware().split('/')[2],
+          component: PowerSupplyCompaniesCEnergoSoftware,
+        },
+        {
           path: appRoutes.networkCompaniesMobileApp().split('/')[2],
           component: NetworkCompaniesMobileApp,
         }
@@ -59,7 +98,7 @@ const router = createRouter({
           component: PowerGridComplexSCADA,
         },
       ]
-    }
+    },
   ]
 })
 

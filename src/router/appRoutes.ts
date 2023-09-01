@@ -16,6 +16,11 @@ export const appRoutes = {
   powerGridComplexSCADA: () => '/digitalization-of-power-grid-complex/SCADA-2.0',
   phaseFailureSystem: () => '/phase-failure-system',
   software: () => '/software',
+  softwareSupplyCompaniesCEnergoSoftware: () => '/software/supply-companies-CEnergo-software',
+  softwareAdminToolsSoftware: () => '/software/admin-tools-software',
+  softwareSupplyCompaniesMobileApp: () => '/software/supply-companies-mobile-app',
+  softwareNetworkCompaniesMobileApp: () => '/software/network-companies-CEnergo-software',
+  softwarePowerGridComplexSCADA: () => '/software/SCADA-2.0',
   intelligentAccountingSystems: () => '/intelligent-accounting-systems',
-  about: () => '/',
+  about: () => '/about',
 }

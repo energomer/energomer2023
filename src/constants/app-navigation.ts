@@ -6,10 +6,6 @@ export const appNavigation = [
     link: appRoutes.solutionForPowerSupplyCompanies(),
     children: [
       {
-        text: 'Линейка продукции',
-        link: appRoutes.powerSupplyCompaniesProductLine(),
-      },
-      {
         text: 'ПО cEnergo',
         link: appRoutes.powerSupplyCompaniesCEnergoSoftware(),
       },
@@ -27,10 +23,6 @@ export const appNavigation = [
     text: 'Решение для сетевых компаний',
     link: appRoutes.solutionForNetworkCompanies(),
     children: [
-      {
-        text: 'Линейка продукции',
-        link: appRoutes.networkCompaniesProductLine(),
-      },
       {
         text: 'ПО cEnergo',
         link: appRoutes.networkCompaniesCEnergoSoftware(),
@@ -54,10 +46,6 @@ export const appNavigation = [
         link: appRoutes.powerGridComplexConstructionDigitalRES(),
       },
       {
-        text: 'Линейка продукции',
-        link: appRoutes.powerGridComplexProductLine()
-      },
-      {
         text: 'SCADA 2.0',
         link: appRoutes.powerGridComplexSCADA(),
       },
@@ -66,12 +54,34 @@ export const appNavigation = [
   {
     children: [
       {
-        text: 'Система обрыва фаз',
-        link: appRoutes.phaseFailureSystem()
-      },
-      {
         text: 'Програмное обеспечение',
         link: appRoutes.software(),
+        children: [
+          {
+            text: 'ПО cEnergo',
+            link: appRoutes.softwareSupplyCompaniesCEnergoSoftware()
+          },
+          {
+            text: 'Admin Tools',
+            link: appRoutes.softwareAdminToolsSoftware()
+          },
+          {
+            text: 'Приложение «Энергомера учёт»',
+            link: appRoutes.softwareSupplyCompaniesMobileApp()
+          },
+          {
+            text: 'Приложение для инжиниринга',
+            link: appRoutes.softwareNetworkCompaniesMobileApp()
+          },
+          {
+            text: 'SCADA 2.0',
+            link: appRoutes.softwarePowerGridComplexSCADA()
+          },
+        ]
+      },
+      {
+        text: 'Система обрыва фаз',
+        link: appRoutes.phaseFailureSystem()
       },
       {
         text: 'Интеллектуальные системы учёта',

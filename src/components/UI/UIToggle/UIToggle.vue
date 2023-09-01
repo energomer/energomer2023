@@ -23,10 +23,12 @@ defineProps<UIToggleProps>()
   border-radius: 20px;
   border: 1px solid $color-grey;
   transition: 0.3s all;
+  user-select: none;
 }
 
 .checkbox {
   appearance: none;
+  opacity: 0;
 
   &:checked + .toggle-inner {
     border: 1px solid $color-blue;

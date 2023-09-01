@@ -72,6 +72,7 @@ const information = [
 }
 
 .title {
+  margin-top: 40px;
   @include title-h1;
 }
 
@@ -88,6 +89,7 @@ const information = [
 }
 
 .image {
+  margin: 0;
   margin-top: 70px;
   position: static;
 }

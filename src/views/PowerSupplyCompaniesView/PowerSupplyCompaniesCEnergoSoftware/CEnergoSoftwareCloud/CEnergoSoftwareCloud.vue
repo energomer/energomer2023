@@ -64,9 +64,15 @@ const information = [
 
 .description {
   @include subtitle;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   top: 110px;
   max-width: 653px;
   color: $color-dark-grey;
+}
+
+.image-wrapper {
+  img {
+    margin-bottom: -40px;
+  }
 }
 </style>

@@ -74,6 +74,7 @@ const information = [
 }
 
 .title {
+  margin-top: 40px;
   @include title-h1;
 }
 
