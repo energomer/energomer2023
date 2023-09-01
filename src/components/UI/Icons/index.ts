@@ -7,6 +7,7 @@ export { default as ICEnergyLogo } from './IcEnergyLogo.vue';
 export { default as IcEnergyLogoWhite } from './IcEnergyLogoWhite.vue';
 export { default as IcInfo } from './IcInfo.vue';
 export { default as IcLogo } from './IcLogo.vue';
+export { default as IcLogoWhite } from './IcLogoWhite.vue';
 export { default as IcMaintenance } from './IcMaintenance.vue';
 export { default as IcMore } from './IcMore.vue';
 export { default as IcRfLogo } from './IcRfLogo.vue';

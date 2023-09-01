@@ -349,6 +349,7 @@ const slideThirdList = [
 }
 
 .slides-container {
+  border-top: 1px solid #CFCCCA;
   margin-top: 40px;
   padding-top: 40px;
 }

@@ -133,8 +133,7 @@ const slides = [
 .image {
   position: absolute;
   bottom: 20px;
-  left: 30px;
-  left: initial;
+  left: 28px;
   margin: 0;
   border-radius: 20px;
 }
