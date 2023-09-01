@@ -25,10 +25,14 @@ const isCloud = ref(false);
         />
     </div>
     <div class="info-blocks">
-      <CEnergoSoftwareCloud 
+      <CEnergoSoftwareCloud
+      :data-aos-duration="500"
+        data-aos="fade-in"
         v-if="isCloud"
       />
       <CEnergoSoftwareNoCloud 
+        data-aos="fade-in"
+        :data-aos-duration="500"
         v-if="!isCloud"
       />
     </div>

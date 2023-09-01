@@ -5,6 +5,7 @@ export interface InfoCardProps {
   description?: string[];
   descriptionList?: string[];
   characteristics?: string[];
+  parametersList?: {key:string, value: string}[]
   benefits?: {
     text: string;
     icon: Component;

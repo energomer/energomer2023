@@ -22,5 +22,10 @@ export const appRoutes = {
   softwareNetworkCompaniesMobileApp: () => '/software/network-companies-CEnergo-software',
   softwarePowerGridComplexSCADA: () => '/software/SCADA-2.0',
   intelligentAccountingSystems: () => '/intelligent-accounting-systems',
+  intelligentAccountingSystemsG3PLC: () => '/intelligent-accounting-systems/G3-PLC',
+  intelligentAccountingSystemsLoRaWAN: () => '/intelligent-accounting-systems/LoRaWAN',
+  intelligentAccountingSystemsLoRS485: () => '/intelligent-accounting-systems/RS-485',
+  intelligentAccountingSystemsGSMGPRS3GNBIoT: () => '/intelligent-accounting-systems/GSM-GPRS-3G-NB-IoT',
+  intelligentAccountingSystemsPLCRF: () => '/intelligent-accounting-systems/PLC-RF',
   about: () => '/about',
 }

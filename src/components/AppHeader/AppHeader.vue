@@ -1,5 +1,7 @@
+<!-- eslint-disable no-param-reassign -->
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+// @ts-nocheck
+import { computed, ref, watch, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
 
 import { appNavigation } from '@/constants/app-navigation';
@@ -11,13 +13,43 @@ import { AppSubNavigation } from './AppSubNavigation';
 
 const route = useRoute();
 
-const activeNavigation = ref<undefined | number>(-1);
+const activeNavigation = ref<number>(-1);
 const [isMenuOpen,, closeMenu, toggleMenu] = useBooleanState(false);
 
 watch(() => route.fullPath, () => {
   const index = appNavigation?.findIndex((item) => item?.link === route.matched[0]?.path);
   activeNavigation.value = index
   closeMenu();
+})
+
+const items = computed(() => {
+  if (appNavigation?.[activeNavigation.value]?.children) {
+    return appNavigation?.[activeNavigation.value]?.children
+  }
+
+  if (route.matched[0]?.path === '/software') {
+    return appNavigation?.[3]?.children[0]?.children
+  }
+
+  if (route.matched[0]?.path === '/intelligent-accounting-systems') {
+    return appNavigation?.[3]?.children[2]?.children
+  }
+
+  return []
+})
+
+watch(isMenuOpen, () => {
+  if (isMenuOpen.value) {
+    document.querySelectorAll('.slider-button').forEach((el) => {
+      el.style.opacity = '0'
+    })
+  } 
+  
+  if (!isMenuOpen.value) {
+    document.querySelectorAll('.slider-button').forEach((el) => {
+      el.style.opacity = '1'
+    })
+  } 
 })
 
 </script>
@@ -27,7 +59,7 @@ watch(() => route.fullPath, () => {
   <div class="container" @click.stop="">
     <AppSubNavigation 
       class="app-navigation" 
-      :items="appNavigation?.[activeNavigation]?.children ?? (route.matched[0]?.path === '/software' ? appNavigation?.[3]?.children[0]?.children :  [])" 
+      :items="items" 
     />
     <AppMenuButton  class="header-button" @click.stop="toggleMenu" />
   </div>

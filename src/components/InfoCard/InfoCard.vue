@@ -50,6 +50,18 @@ defineProps<InfoCardProps>()
         {{ characteristic }}
       </div>
     </div>
+    <div class="parameters" v-if="parametersList">
+      <div 
+        class="parameter" v-for="(parameter, index) in parametersList" 
+        :key="parameter.key"
+        data-aos="fade-in"
+        :data-aos-duration="250"
+        :data-aos-delay="250 * index"
+      >
+        <div class="parameter-key">{{ parameter.key }}</div>
+        <div class="parameter-value">{{ parameter.value }}</div>
+      </div>
+    </div>
     <div class="benefits" v-if="benefits">
       <div 
         class="benefit-card" v-for="(benefit, index) in benefits" 
@@ -73,6 +85,7 @@ defineProps<InfoCardProps>()
 .title {
   @include title-h3;
   max-width: 470px;
+  margin: 0;
 }
 
 .description {
@@ -159,5 +172,32 @@ defineProps<InfoCardProps>()
 
 .benefit-card-text {
   margin-top: 15px;
+}
+
+.parameters {
+  margin-top: 20px;
+}
+
+.parameter {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #CFCCCA;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+
+  &-key {
+    color: #90A3A9;
+    max-width: 360px;
+
+  }
+
+  &-value {
+    width: 250px;
+    text-align: left;
+  }
 }
 </style>

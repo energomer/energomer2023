@@ -3,6 +3,7 @@ import { ref } from 'vue';
 
 import { IcArrow, IcBolt,IcClock,IcDotPattern,IcMaintenance } from '@/components/UI/Icons';
 
+
 const activeSlide = ref(0);
 
 const slideFirstList = [
@@ -339,7 +340,7 @@ const slideThirdList = [
 .subtitle {
   @include subtitle;
   color: $color-dark-grey;
-  max-width: 709px;
+  max-width: 725px;
   text-align: right;
 
   span {

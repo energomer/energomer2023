@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-nocheck
 import { computed } from 'vue';
 
 import { IcArrowNext } from '@/components/UI/Icons';
@@ -19,7 +20,7 @@ const items = computed(() => {
     item.children.forEach((subItem) => {
       if (subItem.text && subItem.link) {
         if (subItem?.children) {
-          navItem[index].push({ text: subItem.text, link: subItem.children?.[0].link, isParent: false })
+          navItem[index].push({ text: subItem.text, link: subItem?.children?.[0].link, isParent: false })
         } else {
           navItem[index].push({ text: subItem.text, link: subItem.link, isParent: false })
         }

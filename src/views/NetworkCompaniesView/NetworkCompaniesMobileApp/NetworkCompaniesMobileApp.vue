@@ -4,7 +4,10 @@ import { computed, ref } from 'vue';
 import { InfoCard } from '@/components/InfoCard';
 import { StepperWithTabs } from '@/components/StepperWithTabs';
 
-const information = [
+import ceSMR from '../../../assets/images/phone.png' 
+import cePPO from '../../../assets/images/phone-1.png' 
+
+const  information = [
   {
     tab: 'ceSMR',
     component: InfoCard,
@@ -93,7 +96,6 @@ const handleTabClick = (tab: string) => {
         {{ description[1] }}
       </p>
       <div class="image-wrapper">
-        <img class="image-background-scheme" src="../../../assets/images/network-companies-view/scheme.png" alt="">
         <img class="image-background" src="../../../assets/images/network-companies-view/engineer.png" alt="">
       </div>
     </div>
@@ -101,11 +103,18 @@ const handleTabClick = (tab: string) => {
       <StepperWithTabs 
         :items="information" 
         with-phone-image 
+        :phone-image-link="activeItem === 0 ? ceSMR : cePPO"
         @on-tab-click="handleTabClick"
       >
         <div class="children-slot">
-          <h4 class="children-slot-title">Особенности</h4>
-          <p class="children-slot-text">Программный комплекс включает в себя мобильное приложение для работы исполнителей на объектах, и веб-кабинет для формирования заданий и контроля их выполнения инженером.</p>
+          <h4     
+            data-aos="fade-in"
+            :data-aos-duration="500"
+            v-if="activeItem === 0" class="children-slot-title">Особенности</h4>
+          <p
+            data-aos="fade-in"
+            :data-aos-duration="500"
+            v-if="activeItem === 0" class="children-slot-text">Программный комплекс включает в себя мобильное приложение для работы исполнителей на объектах, и веб-кабинет для формирования заданий и контроля их выполнения инженером.</p>
         </div>
       </StepperWithTabs>
     </div>
@@ -127,14 +136,7 @@ const handleTabClick = (tab: string) => {
 }
 .image-background {
   position: absolute;
-  left: 50px;
-}
-
-.image-background-scheme {
-  position: absolute;
-  z-index: 10;
-  left: -80px;
-  top: -60px;
+  left: -90px;
 }
 
 .children-slot {

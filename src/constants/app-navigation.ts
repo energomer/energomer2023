@@ -85,7 +85,29 @@ export const appNavigation = [
       },
       {
         text: 'Интеллектуальные системы учёта',
-        link: appRoutes.intelligentAccountingSystems()
+        link: appRoutes.intelligentAccountingSystems(),
+        children: [
+          {
+            text: 'G3-PLC',
+            link: appRoutes.intelligentAccountingSystemsG3PLC()
+          },
+          {
+            text: 'LoRaWAN',
+            link: appRoutes.intelligentAccountingSystemsLoRaWAN()
+          },
+          {
+            text: 'RS-485',
+            link: appRoutes.intelligentAccountingSystemsLoRS485()
+          },
+          {
+            text: 'GSM/GPRS/3G и NB-IoT',
+            link: appRoutes.intelligentAccountingSystemsGSMGPRS3GNBIoT()
+          },
+          {
+            text: 'PLC+RF',
+            link: appRoutes.intelligentAccountingSystemsPLCRF()
+          },
+        ]
       },
       {
         text: 'О компании',

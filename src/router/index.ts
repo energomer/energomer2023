@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import { AboutView } from '@/views/AboutView'
 import { HomeView } from '@/views/HomeView'
+import { G3PLC, GSMGPRS3GNBIoT, IntelligentAccountingSystemsView, LoRS485, PLCRF } from '@/views/IntelligentAccountingSystems'
+import { LoRaWAN } from '@/views/IntelligentAccountingSystems/LoRaWAN'
 import { DigitalizationOfThePowerGridComplex, NetworkCompaniesCybersecurity, NetworkCompaniesMobileApp, NetworkCompaniesView } from '@/views/NetworkCompaniesView'
 import { PowerGridComplexSCADA } from '@/views/NetworkCompaniesView/DigitalizationOfThePowerGridComplex'
 import { PowerSupplyCompaniesAdminToolsSoftware, PowerSupplyCompaniesCEnergoSoftware, PowerSupplyCompaniesMobileApp, PowerSupplyCompaniesProductLine, PowerSupplyCompaniesView } from '@/views/PowerSupplyCompaniesView'
@@ -99,6 +101,32 @@ const router = createRouter({
         },
       ]
     },
+    {
+      path: appRoutes.intelligentAccountingSystems(),
+      component: IntelligentAccountingSystemsView,
+      children: [
+        {
+          path: appRoutes.intelligentAccountingSystemsG3PLC().split('/')[2],
+          component: G3PLC,
+        },
+        {
+          path: appRoutes.intelligentAccountingSystemsLoRaWAN().split('/')[2],
+          component: LoRaWAN,
+        },
+        {
+          path: appRoutes.intelligentAccountingSystemsLoRS485().split('/')[2],
+          component: LoRS485,
+        },
+        {
+          path: appRoutes.intelligentAccountingSystemsGSMGPRS3GNBIoT().split('/')[2],
+          component: GSMGPRS3GNBIoT,
+        },
+        {
+          path: appRoutes.intelligentAccountingSystemsPLCRF().split('/')[2],
+          component: PLCRF,
+        }
+      ]
+    }
   ]
 })
 

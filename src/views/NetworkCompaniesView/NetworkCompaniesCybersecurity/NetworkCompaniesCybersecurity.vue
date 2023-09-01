@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 import { InfoCard } from '@/components/InfoCard';
 import { StepperWithTabs } from '@/components/StepperWithTabs';
-import { ICEnergyLogo,IcRfLogo } from '@/components/UI/Icons';
+import { ICEnergyLogo,IcEnergyLogoWhite,IcRfLogo } from '@/components/UI/Icons';
 
 import { SecuritySlide } from './Security'
 
@@ -30,18 +30,20 @@ const information = [
   }
 ]
 
-const leftBlockTabs = [
+const activeTab = ref(0);
+
+const leftBlockTabs = computed(() => [
   {
     icon: IcRfLogo,
     text: 'Постановление Правительства РФ №890 «О порядке предоставления доступа к минимальному набору функций интеллектуальных систем учёта электрической энергии (мощности)». Постановление описывает новые функции, которые должны быть реализованы в ИСУЭ.'
   },
   {
-    icon: ICEnergyLogo,
+    icon: activeTab.value === 0 ? ICEnergyLogo : IcEnergyLogoWhite,
     text: 'Минэнерго России утвердило документ, описывающий «Базовую модель угроз и нарушителя ИСУЭ», который устанавливает необходимость применения СКЗИ в ИСУЭ для защиты информации, передаваемой по общедоступным каналам связи.'
   }
-]
+])
 
-const activeTab = ref(0);
+
 </script>
 
 <template>

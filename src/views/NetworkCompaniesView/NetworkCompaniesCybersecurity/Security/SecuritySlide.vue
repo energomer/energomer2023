@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { IcInfo } from '@/components/UI/Icons';
+
 import tab1 from '../../../../assets/images/network-companies-view/tab1.png'
 import tab2 from '../../../../assets/images/network-companies-view/tab2.png'
 import tab3 from '../../../../assets/images/network-companies-view/tab3.png'
@@ -39,6 +41,12 @@ const tabs = [
       </h3>
       <img class="image" src="../../../../assets/images/network-companies-view/schema.png" alt="">
     </div>
+    <div class="schema-info">
+      <IcInfo class="schema-info-icon"/>
+      <p class="schema-description">
+        АС СКЗИ выполняет функции защиты информации при использовании коммуникационных протоколов, профиль которых определяется стандартами DLMS, ГОСТ Р 58940-2020 и методического документа МР 26.4.003-2019
+      </p>
+    </div>
   </div>
 </template>
 
@@ -51,7 +59,7 @@ const tabs = [
 
 .schema-wrapper {
   margin-top: 10px;
-  padding-bottom: 56px;
+  padding-bottom: 20px;
   background: #fff;
   position: relative;
   z-index: 1;
@@ -64,7 +72,6 @@ const tabs = [
 }
 
 .image {
-  margin-top: 41px;
   margin-left: 57px;
   margin-right: 200px;
   position: static;
@@ -80,5 +87,19 @@ const tabs = [
   border-radius: 20px;
   min-width: 218px;
   width: 100%;
+}
+
+.schema-info {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+
+  &-icon {
+    min-width: 40px;
+  }
+}
+
+.schema-description {
+  color: #90A3A9;
 }
 </style>

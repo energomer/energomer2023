@@ -74,6 +74,7 @@ const activeItem = ref(0);
         :data-aos-duration="500"
       >
         <img src="../../../../assets/images/banground-Scada.png" alt="">
+        <img class="scada-dots" src="../../../../assets/images/scada-dots.png" alt="">
         <div class="right-block-title">
           Описание
         </div>
@@ -109,7 +110,13 @@ const activeItem = ref(0);
 
 .image {
   position: absolute;
-  left: -200px;
+  left: -140px;
+  margin-top: 0;
+}
+
+.scada-dots {
+  position: absolute;
+  left: 0;
 }
 
 .image-qr {

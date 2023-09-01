@@ -9,6 +9,7 @@ export interface StepperWithTabsProps {
     props?: InfoCardProps;
   }[]
   withPhoneImage?: boolean
+  phoneImageLink?: string;
 }
 
 export interface StepperWithTabsEmits {

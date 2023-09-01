@@ -48,6 +48,7 @@ onMounted(() => {
         :descriptionList="activeItem?.props?.descriptionList"
         :benefits="activeItem?.props?.benefits"
         :characteristics="activeItem?.props?.characteristics"
+        :parametersList="activeItem?.props?.parametersList"
       />
     </div>
     <div class="background-image-wrapper">
@@ -61,9 +62,11 @@ onMounted(() => {
       alt=""
     >
     <img
+      data-aos="fade-in"
+      :data-aos-duration="500"
       v-if="withPhoneImage"
       class="background-image-phone"
-      src="../../assets/images/phone.png" alt=""
+      :src="phoneImageLink" alt=""
     >
     <slot />
   </div>
@@ -91,7 +94,7 @@ onMounted(() => {
   height: 48px;
   width: 100%;
   border-radius: 40px;
-  width: fit-content;
+  width: 100%;
   margin-bottom: 40px;
 }
 
@@ -103,6 +106,7 @@ onMounted(() => {
   color: $color-dark-grey;
   text-transform: uppercase;
   transition: 0.4s all;
+  white-space: nowrap;
 
   &-active {
     color: $color-white;
