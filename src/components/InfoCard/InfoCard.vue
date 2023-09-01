@@ -15,6 +15,17 @@ defineProps<InfoCardProps>()
     >
       {{ t }}
     </h2>
+    <div class="characteristics" v-if="characteristics">
+      <div 
+        class="characteristic" v-for="(characteristic, index) in characteristics" 
+        :key="characteristic"
+        data-aos="fade-in"
+        :data-aos-duration="250"
+        :data-aos-delay="250 * index"
+      >
+        {{ characteristic }}
+      </div>
+    </div>
     <div class="description" v-if="description" >
       <p 
         v-for="paragraph in description" 
@@ -37,17 +48,6 @@ defineProps<InfoCardProps>()
         :data-aos-delay="250 * index"
       >
         {{ item }}
-      </div>
-    </div>
-    <div class="characteristics" v-if="characteristics">
-      <div 
-        class="characteristic" v-for="(characteristic, index) in characteristics" 
-        :key="characteristic"
-        data-aos="fade-in"
-        :data-aos-duration="250"
-        :data-aos-delay="250 * index"
-      >
-        {{ characteristic }}
       </div>
     </div>
     <div class="parameters" v-if="parametersList">

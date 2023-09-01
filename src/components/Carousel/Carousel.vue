@@ -101,4 +101,8 @@ const nextNodeRef = ref<SwiperType | null>(null);
     }
   }
 }
+
+.swiper-button-disabled {
+  opacity: 0.6;
+}
 </style>

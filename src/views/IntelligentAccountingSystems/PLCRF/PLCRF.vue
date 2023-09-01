@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Carousel } from '@/components/Carousel';
 import { InfoCard } from '@/components/InfoCard';
 import { StepperWithTabs } from '@/components/StepperWithTabs';
 
@@ -8,7 +9,6 @@ import img2 from './image 95-2.png'
 import img3 from './image 95-3.png'
 import img4 from './image 95-4.png'
 import img5 from './image 95-5.png'
-import { Carousel } from '@/components/Carousel';
 
 
 

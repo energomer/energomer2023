@@ -10,14 +10,7 @@ const information = [
       title: ['Область применения'],
       description:[
         'Интеллектуальные системы учета электроэнергии (ИСУЭ) как на розничном, так и на оптовом рынке электроэнергии для электросетевых и сбытовых компаний.',
-      ]
-    }
-  },
-  {
-    tab: 'Возможности',
-    component: InfoCard,
-    props: {
-      title: ['Возможности ПО'],
+      ],
       descriptionList: [
         'Разграничение прав по типу пользователей',
         'Одновременная работа с группой однотипных устройств',
@@ -39,6 +32,17 @@ const information = [
       characteristics: [
         'COM-порт', 'Ethernet', 'Инфракрасный порт IrDa', 'Оптическая головка',
         'Адаптер RS232-RS485', 'PLC-модем', 'Радио-модем'
+      ],
+      descriptionList: [
+        ' Разграничение прав по типу пользователей',
+        ' Одновременная работа с группой однотипных устройств',
+        ' Считывание/запись даты и времени подключенных устройств',
+        ' Получение информации о подключенных устройствах',
+        ' Выполнение команд на подключенных устройствах',
+        ' Изменение параметров конфигурации подключенных устройств',
+        ' Контроль текущего состояния подключенных устройств',
+        ' Мониторинг измерений, хранящихся в подключенных устройствах',
+        ' Доступ к журналу событий подключенных устройств'
       ]
     }
   }
@@ -60,7 +64,8 @@ const information = [
       <img class="image" src="../../../assets/images/solution-for-power-supply-companies/admin-tools.png" alt="">
     </div>
     <div class="right-block">
-      <StepperWithTabs :items="information" />
+      <StepperWithTabs :items="information">
+      </StepperWithTabs>
     </div>
   </div>
 </template>
@@ -93,6 +98,12 @@ const information = [
   margin-top: 70px;
   position: absolute;
   left: -90px;
+}
+
+.image-bubble {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 </style>
