@@ -21,6 +21,7 @@ const router = useRouter();
 <style lang="scss" scoped>
 .main-view {
   position: absolute;
+  z-index: 110;
   top:0;
   bottom: 0;
   left: 0;

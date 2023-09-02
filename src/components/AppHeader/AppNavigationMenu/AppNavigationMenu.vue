@@ -119,5 +119,33 @@ const items = computed(() => {
     text-decoration: none;
     font-size: 15px;
     color: $color-black;
+
+    svg {
+      @include fill-svg-and-path($color-blue);
+      margin-right: 10px;
+    }
   }
+
+.router-link-active.router-link-exact-active.children-link {
+  background: $color-blue;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 0px 10px 10px;
+  margin: 10px 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #CFCCCA;
+    position: absolute;
+    bottom: -11px;
+    left: 0
+  }
+
+  svg {
+    @include fill-svg-and-path($color-white);
+  }
+}
 </style>

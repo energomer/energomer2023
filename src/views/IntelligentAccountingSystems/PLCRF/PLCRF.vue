@@ -50,7 +50,7 @@ const information = [
     tab: 'Характеристики',
     component: InfoCard,
     props: {
-      title: ['Характеристики гибридного канала связи PLC+RF'],
+      title: ['Характеристики'],
       parametersList:[
         {key: 'Скорость передачи данных', value: 'по интерфейсу 9 600 бит/сек'},
         {key: 'Способ модуляции', value: 'ROBO, DBPSK, DQPSK, D8PSK, D8PSK (выбираются автоматически)'},
@@ -132,7 +132,7 @@ const information = [
 .image {
   position: absolute;
   bottom: 20px;
-  left: 30px;
+  left: 18px;
   margin: 0;
   border-radius: 20px;
 }

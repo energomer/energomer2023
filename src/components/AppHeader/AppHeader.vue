@@ -7,6 +7,8 @@ import { useRoute } from 'vue-router';
 import { appNavigation } from '@/constants/app-navigation';
 import { useBooleanState } from '@/hooks/useBooleanState';
 
+import { UIModal } from '../UI/UIModal';
+
 import { AppMenuButton } from './AppMenuButton';
 import { AppNavigationMenu } from './AppNavigationMenu';
 import { AppSubNavigation } from './AppSubNavigation';
@@ -32,7 +34,6 @@ const items = computed(() => {
   }
 
   if (route.matched[0]?.path === '/intelligent-accounting-systems') {
-    console.log(appNavigation?.[3], 123213123)
     return appNavigation?.[3]?.children[1]?.children
   }
 
@@ -62,8 +63,9 @@ watch(isMenuOpen, () => {
       class="app-navigation" 
       :items="items" 
     />
-    <AppMenuButton  class="header-button" @click.stop="toggleMenu" />
+    <AppMenuButton  :class="['header-button', {'header-button-active': isMenuOpen}]" @click.stop="toggleMenu" />
   </div>
+  <UIModal :isOpen="isMenuOpen" @on-close="closeMenu">
     <div 
       v-if="isMenuOpen" 
       class="navigation-menu-wrapper"     
@@ -72,6 +74,7 @@ watch(isMenuOpen, () => {
     >
       <AppNavigationMenu @on-link-click="closeMenu()"/>
     </div>
+  </UIModal>
 </header>
 </template>
 
@@ -89,9 +92,17 @@ watch(isMenuOpen, () => {
 }
 
 .navigation-menu-wrapper {
-  position: absolute;
-  top: 158px;
+  margin-top: 158px;
   transition: 0.3s;
   z-index: 100;
+}
+
+.header-button {
+  position: relative;
+  z-index: 102;
+
+  &-active {
+    background: #FFF;
+  }
 }
 </style>

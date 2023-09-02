@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import { AboutView } from '@/views/AboutView'
+import { ConstructionDigitalRES } from '@/views/ConstructionDigitalRES'
 import { HomeView } from '@/views/HomeView'
 import { G3PLC, GSMGPRS3GNBIoT, IntelligentAccountingSystemsView, LoRS485, PLCRF } from '@/views/IntelligentAccountingSystems'
 import { LoRaWAN } from '@/views/IntelligentAccountingSystems/LoRaWAN'
 import { MenuView } from '@/views/MenuView'
 import { DigitalizationOfThePowerGridComplex, NetworkCompaniesCybersecurity, NetworkCompaniesMobileApp, NetworkCompaniesView } from '@/views/NetworkCompaniesView'
 import { PowerGridComplexSCADA } from '@/views/NetworkCompaniesView/DigitalizationOfThePowerGridComplex'
+import { PhaseFailureSystem } from '@/views/PhaseFailureSystem'
 import { PowerSupplyCompaniesAdminToolsSoftware, PowerSupplyCompaniesCEnergoSoftware, PowerSupplyCompaniesMobileApp, PowerSupplyCompaniesProductLine, PowerSupplyCompaniesView } from '@/views/PowerSupplyCompaniesView'
 import { SoftwareView } from '@/views/SoftwareView'
 
@@ -103,11 +105,11 @@ const router = createRouter({
       children: [
         {
           path: appRoutes.powerGridComplexConstructionDigitalRES().split('/')[2],
-          component: PowerGridComplexSCADA,
+          component: ConstructionDigitalRES,
         },
         {
           path: appRoutes.powerGridComplexPhaseFailureSystem().split('/')[2],
-          component: PowerGridComplexSCADA,
+          component: PhaseFailureSystem,
         },
         {
           path: appRoutes.powerGridComplexSCADA().split('/')[2],

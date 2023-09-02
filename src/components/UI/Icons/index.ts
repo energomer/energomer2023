@@ -12,5 +12,6 @@ export { default as IcMaintenance } from './IcMaintenance.vue';
 export { default as IcMore } from './IcMore.vue';
 export { default as IcRfLogo } from './IcRfLogo.vue';
 export { default as IcSecurity } from './IcSecurity.vue';
+export { default as IcThunder } from './IcThunder.vue';
 export { default as IcWiFi } from './IcWiFi.vue';
 

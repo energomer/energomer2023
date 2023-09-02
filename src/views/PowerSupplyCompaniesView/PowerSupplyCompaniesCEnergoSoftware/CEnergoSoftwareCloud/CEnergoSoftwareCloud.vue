@@ -4,11 +4,32 @@ import { StepperWithTabs } from '@/components/StepperWithTabs';
 import { IcSecurity, IcWiFi } from '@/components/UI/Icons';
 
 const information = [
-  {
-    tab: '',
+{
+    tab: 'Область применения',
     component: InfoCard,
     props: {
       title: ['Область применения'],
+      description:[
+        'Интеллектуальные системы учета электроэнергии (ИСУЭ) на розничном рынке электроэнергии для электросетевых компаний, управляющих компаний, СНТ, ДНТ, ТСЖ, УК и др.',
+        'Объекты АСКУЭ «нетребовательных потребителей»'
+      ],
+      benefits: [
+        {
+          text: 'Удобный доступ к продукту с широкими возможностями по обеспечению безопасности.',
+          icon: IcSecurity
+        },
+        {
+          text: 'СeCloud реализует контейнерную микросервисную архитектуру с доступом к веб-интерфейсу через сеть интернет, приватную или локальную сети',
+          icon: IcWiFi,
+        }
+      ]
+    }
+  },
+  {
+    tab: 'Возможности ПО',
+    component: InfoCard,
+    props: {
+      title: ['Возможности ПО'],
       descriptionList:[
         'Разграничение прав доступа',
         'Управление учетными записями',
@@ -39,7 +60,7 @@ const information = [
       class="left-block"
     >
       <p class="description">
-        ПО предназначено для измерения и многотарифного коммерческого учёта электрической энергии и мощности, автоматизированного сбора, хранения, обработки и отображения данных по энергопотреблению
+        Программное обеспечение верхнего уровня с «облачной» базой данных и возможностью автономного использования продукта на серверах клиента
       </p>
       <div class="image-wrapper">
         <img src="../../../../assets/images/solution-for-power-supply-companies/cenergo-cloud.png" alt="">
@@ -64,7 +85,7 @@ const information = [
 
 .description {
   @include subtitle;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   top: 110px;
   max-width: 653px;
   color: $color-dark-grey;
@@ -72,7 +93,7 @@ const information = [
 
 .image-wrapper {
   img {
-    margin-bottom: -40px;
+    margin-bottom: -60px;
   }
 }
 </style>

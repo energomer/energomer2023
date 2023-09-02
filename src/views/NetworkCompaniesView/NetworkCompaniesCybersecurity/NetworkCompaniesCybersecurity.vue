@@ -13,10 +13,10 @@ const information = [
     component: SecuritySlide,
   },
   {
-    tab: 'СКЗИ включает',
+    tab: 'Состав СКЗИ',
     component: InfoCard,
     props: {
-      title: ['СКЗИ включает'],
+      title: ['Состав СКЗИ'],
       descriptionList: [
         'ПУ со встроенным СКЗИ для применения в «двухуровневой схеме», когда прибор учёта подключается непосредственно к ИВК ИСУЭ (планируется в 2023-2024 г.)',
         'УСПД для групповой защиты ПУ; при этом ПУ могут применяться без СКЗИ или с СКЗИ, выполняющим только функцию аутентификации ПУ в режиме считывания показаний',
@@ -147,6 +147,7 @@ const leftBlockTabs = computed(() => [
 
 .tab-button {
   @include reset-button-style;
+  position: relative;
   width: 225px;
   height: 52px;
   border-radius: 30px;
@@ -155,6 +156,35 @@ const leftBlockTabs = computed(() => [
   justify-content: center;
   background: $color-grey;
   margin-top: 5px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 10px;
+    height: 100%;
+    background-color: rgba(#fff, 0.6);
+    animation: move-light 6s linear infinite;
+  }
+      
+  @keyframes move-light {
+    from  {
+      transform: translateX(-60em) skewX(-45deg)
+    }
+
+    to  {
+      transform: translateX(60em) skewX(-45deg)
+    }
+  }
+
+  &:last-child {
+    &::before {
+      animation: move-light 6s linear infinite;
+      animation-delay: 8s;
+    }
+  }
 
   svg {
     @include fill-svg-and-path($color-blue);
