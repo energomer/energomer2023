@@ -71,6 +71,7 @@ watch(isMenuOpen, () => {
       class="navigation-menu-wrapper"     
       data-aos="fade-down-left"
       :data-aos-duration="500"
+      @click.stop=""
     >
       <AppNavigationMenu @on-link-click="closeMenu()"/>
     </div>

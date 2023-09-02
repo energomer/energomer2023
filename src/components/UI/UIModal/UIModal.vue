@@ -10,7 +10,7 @@ defineEmits<UIModalEmits>()
     <Transition>
       <div v-if="isOpen" class="ui-modal" @click.stop="$emit('onClose')">
         <div class="ui-modal-inner">
-          <slot @click.stop/>
+          <slot />
         </div>
       </div>
     </Transition>
