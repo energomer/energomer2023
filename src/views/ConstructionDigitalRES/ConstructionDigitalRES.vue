@@ -47,10 +47,6 @@ const information = [
     component: InfoCard,
     props: {
       title: ['Пример реализации'],
-      description: [
-        'Интеллектуальные приборы учета электроэнергии ТМ «Энергомера» позволяют выявлять обрыв фазных и нулевых проводов при помощи векторных измерений параметров сети и эффективного алгоритма обмена данными.',
-        'Реализованный в счетчике протокол телемеханики МЭК 60870-5-104 по GSM каналу обеспечивает взаимодействие с диспетчерской системой SCADA, которая за счет анализа топологии сети и параметров совокупности ее узлов, локализует места повреждений сети и формирует команду телеуправления на УСПД для снятия опасного напряжения с поврежденного участка сети.'
-      ]
     }
   }
 ]
@@ -71,8 +67,7 @@ const activeTab = ref(information[0].tab)
       <p class="description">
         Программно-аппаратный комплекс, позволяющий оценивать надежность электроснабжения промышленного предприятия и выявлять уязвимые места в энергосистеме при проектировании, в процессе эксплуатации, а также при разработке сценариев развития сети
       </p>
-      <p class="subtitle">Пример реализации</p>
-      <img class="image" src="../../assets/images/construction-digital-RES.png" alt="">
+      <img class="image" src="../../assets/images/res-3.png" alt="">
     </div>
     <div class="right-block">
       <StepperWithTabs 
@@ -88,12 +83,17 @@ const activeTab = ref(information[0].tab)
               :key="item"
               data-aos="fade-in"
               :data-aos-duration="250"
-              :data-aos-delay="250 * index"
+              :data-aos-delay="150 * index"
             >
               {{ item }}
             </div>
           </div>
-          <img src="../../assets/images/res-1.png" alt="">
+          <img 
+            src="../../assets/images/res-1.png" alt=""
+            data-aos="fade-left"
+            :data-aos-duration="250"
+            :data-aos-delay="300"
+          >
         </div>
         <div class="first-tab-steps">
           <div class="first-tab-steps-title">
@@ -114,8 +114,15 @@ const activeTab = ref(information[0].tab)
           </div>
         </div>
       </div>
-      <img class="res" v-if="activeTab === information[1].tab" src="../../assets/images/res-2.png" alt=""/>
-      <img class="res"  v-if="activeTab === information[2].tab" src="../../assets/images/res-3.png" alt=""/>
+      <img 
+        class="res"  
+        v-if="activeTab === information[2].tab" 
+        src="../../assets/images/construction-digital-RES.png" 
+        alt=""
+        data-aos="fade-up"
+        :data-aos-duration="250"
+        :data-aos-delay="300"
+      />
     </StepperWithTabs>
     </div>
   </div>

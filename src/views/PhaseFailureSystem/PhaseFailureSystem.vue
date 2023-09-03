@@ -91,12 +91,12 @@ const information = [
   @include subtitle;
   margin-top: 20px;
   color: $color-dark-grey;
-  max-width: 850px;
+  max-width: 653px;
 }
 
 .image {
-  margin-left: -20px;
-  margin-top: 102px;
+  margin-left: 0px;
+  margin-top: 84px;
   position: static;
 }
 </style>
