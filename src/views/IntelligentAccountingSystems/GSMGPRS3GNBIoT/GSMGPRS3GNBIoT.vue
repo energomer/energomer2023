@@ -111,6 +111,10 @@ const information = [
   justify-content: space-between;
 }
 
+.left-block {
+  overflow: inherit;
+}
+
 .title {
   margin-top: 40px;
   @include title-h2;

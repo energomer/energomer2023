@@ -128,6 +128,10 @@ const slides = [
   justify-content: space-between;
 }
 
+.left-block {
+  overflow: inherit;
+}
+
 .carousel-products {
   margin-top: 40px;
 }

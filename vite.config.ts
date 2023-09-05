@@ -5,7 +5,6 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/energomer2023',
   plugins: [
     vue(),
   ],
@@ -19,7 +18,7 @@ export default defineConfig({
       scss: {
         additionalData: `
           @import "@/assets/styles/variables.scss";
-          @import "@/assets/styles/mixins.scss";
+          @import "@/assets/styles/mixins.scss";n
         `,
       },
     },

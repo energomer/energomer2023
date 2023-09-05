@@ -114,6 +114,10 @@ const slides = [
   @include title-h2;
 }
 
+.left-block {
+  overflow: inherit;
+}
+
 .carousel-products {
   margin-top: 40px;
 }

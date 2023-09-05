@@ -119,6 +119,10 @@ const slides = [
   @include title-h2;
 }
 
+
+.left-block {
+  overflow: inherit;
+}
 .subtitle {
   margin-top: 10px;
   color: $color-dark-grey;
